@@ -87,3 +87,47 @@ nav{
     display: flex;          /* 👈 required */
     justify-content: center;
 }
+section{
+    padding-bottom: 20px;
+    background-color: #CFE4E6;
+}
+#contact-section{
+    padding: 70px 20px;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+#contact h3{
+    font-size: 1.2rem;
+    color: #0B1F3A;
+    margin-bottom: 12px;
+}
+.contact-form{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    background-color: #0B1F3A;
+    border-radius: 6px;
+    width: 100%;
+    resize: none;
+    color: #fff;
+}
+.contact-form button{
+    padding: 12px;
+    background-color: #0B1F3A;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-form button: hover{
+    background-color: #16365C;
+}
