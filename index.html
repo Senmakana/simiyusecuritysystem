@@ -3,62 +3,248 @@
     <html>
     <head>
         <link rel="stylesheet" href="styles/styles.css">
+        <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <title>
             simiyu security solutions home
         </title>
     </head>
-    <body>
-        <div class="page">
-            <nav>
+    <section id="home-section">
+        <body>
+            <div class="page">
+
+                <h1>
+                    Simiyu Security Systems
+                </h1>
+                <img src="images/logo.png">
+                <h2>
+                    Professional Private Securty & Rapid Alarm Response Services
+                </h2>
+                <p>
+                    We provide reliable manned guarding and fast alarm response services to protect homes, business and institutions
+                </p>
+                <nav>
+                    <a href="#about-section">
+                        about us
+                    </a>
+                    <a href="#services-section">
+                        services
+                    </a>
+                    <a href="#coverage-section">
+                        coverage/ Areas served
+                    </a>
+                    <a href="#whyus-section">
+                        Why us
+                    </a>
+                    <a href="#contacts-section">
+                        contact us
+                    </a>
+                </nav>
+                <div class="btndiv">
+                    <button>
+                        Request a Quote
+                    </button>
+                    <button>
+                        Call Now
+                    </button>
+                </div>
+            </section>
+            <section>
+                <h1>
+                    Simiyu Security Systems
+                </h1>
+                <h2>
+                    About
+                </h2>
+                <div class="about-banner">
+                    <img src="images/parade.jpg" alt="security personnel at assembly">
+                </div>
+                <p>
+                    We are a private security service provider offering manned guarding and rapid alarm response solutions. Our focus on reliability, fast response times and professional personnel to ensure the safety of our clients, property and operations
+                </p>
+                <nav>
+                    <a href="#home-section">
+                        home
+                    </a>
+                </nav>
+            </section>
+            <section id="services-section">
+                <h2>
+                    Services
+                </h2>
                 <ul>
                     <li>
-                        <a href="pages/about.html">
-                            about us
-                        </a>
+                        <h3>
+                            Manned Guarding Services
+                        </h3>
+                        <img src="images/manned.jpg" alt="guards manning station">
+                        <p>
+                            Trained securty guards for residential, commercial and institutional premises
+                        </p>
                     </li>
                     <li>
-                        <a href="pages/services.html">
-                            services
-                        </a>
+                        <h3>
+                            Alarm Responses & Patrol
+                        </h3>
+                        <img src="images/alarm.jpg" alt="alarm set off">
+                        <p>
+                            24/7 alarm response and mobile patrol services to ensure fast intervention and incident control
+                        </p>
                     </li>
                     <li>
-                        <a href="pages/coverage.html">
-                            coverage/ Areas served
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/whyus.html">
-                            Why us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/contact.html">
-                            contact us
-                        </a>
+                        <h3>
+                            Access Control & Gate Management
+                        </h3>
+                        <img src="images/access.jpg" alt="guards controling access to persons and vehicles">
+                        <p>
+                            Professional control of entry and exit points to ensure only authorised persons and vehicles access the premises, supported by proper visitor verification and gate procedures
+                        </p>
                     </li>
                 </ul>
+                <nav>
+                    <a href="#home-section">
+                        home
+                    </a>
+                </nav>
+            </section>
+            <section id="coverage-section">
+                <h2>
+                    Coverage/ Areas Served
+                </h2>
+                <p>
+                    We Serve clients within South Coast region and surrounding areas offering fast deployment and rapid response teams
+                </p>
+                <div id="map"></div>
+                <script>
+                    const centerLat = -4.2879;
+                    const centerLng = 39.5653;
+
+                    // Create the map
+                    const map = L.map('map', {
+                        minZoom: 10,
+                        maxZoom: 16
+                    }).setView([centerLat, centerLng], 11);
+
+                    // Load and show tiles
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    // Draw a 25 km radius circle
+                    L.circle([centerLat, centerLng], {
+                        color: "#0B1F3A",
+                        fillColor: "#0B1F3A",
+                        fillOpacity: 0.1,
+                        radius: 25000 // 25,000 meters = 25 km
+                    }).addTo(map);
+                </script>
+                <nav>
+                    <a href="#home-section">
+                        home
+                    </a>
+                </nav>
+            </section>
+            <section id="whyus-section">
+                <h2>
+                    Why Choose Us
+                </h2>
+                <ul>
+                    <li>
+                        <h3>
+                            Rapid Response When It matters Most
+                        </h3>
+                        <p>
+                            Our patrol and response teams are strategically positioned to ensure fast reaction to alarms and incidents.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            Trained and Professional Security Personnel
+                        </h3>
+                        <p>
+                            We deploy disciplined well trained guards who understand site proceedures, access control and customer safety.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            Reliable Patrol And Monitering Operations
+                        </h3>
+                        <p>
+                            Our mobile patrol teams provide continuous supervision and quick interventions to reduce security risks
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            Clear Communication and Incident Reporting
+                        </h3>
+                        <p>
+                            we maintain proper communication channels and provide accurate incident reporting for accountability and transparency.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            Client Focused Security Solutions
+                        </h3>
+                        <p>
+                            We tailor our guarding and response to match the specific needs of each site and client
+                        </p>
+                    </li>
+                </ul>
+                <nav>
+                    <a href="#home-section">
+                        home
+                    </a>
+                </nav>
+            </section>
+            <section id="contacts-section">
+                <h2>
+                    Get in Touch with Us
+                </h2>
+                <p>
+                    We are here to provide professional security services for your home, business, or institution. Reach out today out today and one of our team members will respond promptly
+                </p>
+                <h3>
+                    Contact Details
+                </h3>
+                <ul>
+                    <li>
+                        <p>
+                            <strong>phone:</strong>+254700 000 000
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>whatsApp:</strong>+254700 000 000
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>
+                                email:
+                            </strong>
+                            <a>
+                                simiyusecuritysystem@gmail.com
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Address:</strong>123 Diani Beach, Kenya
+                        </p>
+                    </li>
+                </ul>
+            <nav>
+                <a href="#home-section">
+                    home
+                </a>
             </nav>
-            <h1>
-                Simiyu Security Systems
-            </h1>
-            <img src="images/logo.png">
-            <h2>
-                Professional Private Securty & Rapid Alarm Response Services
-            </h2>
-            <p>
-                We provide reliable manned guarding and fast alarm response services to protect homes, business and institutions
-            </p>
-            <div class="btndiv">
-                <button>
-                    Request a Quote
-                </button>
-                <button>
-                    Call Now
-                </button>
+                <footer>
+                    www.simiyusecuritysystem.co.ke@2026
+                </footer>
             </div>
-            <footer>
-                www.simiyusecuritysystem.co.ke@2026
-            </footer>
-        </div>
-    </body>
+        </section>
+    </div>
+</body>
 </html>
