@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <title>
+        simiyu security systems
+    </title>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="page">
+        <a href="../index.html">
+            home
+        </a>
+        <h1>
+            Simiyu Security Systems
+        </h1>
+        <h2>
+            Coverage/ Areas Served
+        </h2>
+        <p>
+            We Serve clients within South Coast region and surrounding areas offering fast deployment and rapid response teams
+        </p>
+        <div id="map"></div>
+        <script>
+            const centerLat = -4.2879;
+            const centerLng = 39.5653;
+
+            // Create the map
+            const map = L.map('map', {
+                minZoom: 10,
+                maxZoom: 16
+            }).setView([centerLat, centerLng], 11);
+
+            // Load and show tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Draw a 25 km radius circle
+            L.circle([centerLat, centerLng], {
+                color: "#0B1F3A",
+                fillColor: "#0B1F3A",
+                fillOpacity: 0.1,
+                radius: 25000 // 25,000 meters = 25 km
+            }).addTo(map);
+        </script>
+        <footer>
+            www.simiyusecuritysystem.co.ke@2026
+        </footer>
+    </div>
+</body>
+</html>
