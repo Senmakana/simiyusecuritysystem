@@ -6,6 +6,7 @@
         <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <title>
             simiyu security solutions
@@ -25,7 +26,7 @@
                 <p>
                     We provide reliable manned guarding and fast alarm response services to protect homes, business and institutions
                 </p>
-                <nav>
+                <nav id="main-nav">
                     <a href="#about-section">
                         about us
                     </a>
@@ -59,7 +60,7 @@
                     </a>
                 </nav>
             </section>
-            <section id="services-section">
+            <section id="services-section" class="fade-in">
                 <h2>
                     Services
                 </h2>
@@ -195,41 +196,41 @@
                     We are here to provide professional security services for your home, business, or institution. Reach out today out today and one of our team members will respond promptly
                 </p>
                 <!--<h3>
-                    Contact Details
-                </h3>
-                <ul>
-                    <li>
-                        <p>
-                            <strong>phone:</strong>+254700 000 000
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>whatsApp:</strong>+254700 000 000
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>
-                                email:
-                            </strong>
-                            <a>
-                                simiyusecuritysystem@gmail.com
-                            </a>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Address:</strong>123 Diani Beach, Kenya
-                        </p>
-                    </li>
-                </ul>-->
+                                                                    Contact Details
+                                                                </h3>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p>
+                                                                            <strong>phone:</strong>+254700 000 000
+                                                                        </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p>
+                                                                            <strong>whatsApp:</strong>+254700 000 000
+                                                                        </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p>
+                                                                            <strong>
+                                                                                email:
+                                                                            </strong>
+                                                                            <a>
+                                                                                simiyusecuritysystem@gmail.com
+                                                                            </a>
+                                                                        </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p>
+                                                                            <strong>Address:</strong>123 Diani Beach, Kenya
+                                                                        </p>
+                                                                    </li>
+                                                                </ul>-->
                 <h3>Contact us</h3>
                 <form class="contact-form">
                     <input type="text" name="name" placeholder="Your name" required=>
                     <input type="email" name="email" placeholder="Your email" required>
                     <textarea
-                    name="message" rows="5" placeholder="Your message" required></textarea>
+                        name="message" rows="5" placeholder="Your message" required></textarea>
                     <button type="submit">
                         Send Message
                     </button>
@@ -250,5 +251,54 @@
             </div>
         </section>
     </div>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("#main-nav a");
+
+        function updateActiveLink() {
+            let currentSection = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${currentSection}`) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // Update on scroll
+        window.addEventListener("scroll", updateActiveLink);
+
+        // Optional: update immediately on load
+        window.addEventListener("load", updateActiveLink);
+    </script>
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.2
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 </body>
 </html>
