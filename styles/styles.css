@@ -9,7 +9,7 @@ body{
     font-family: 'Roboto', Sans-Serif;
     color: #2E2E2E;
     background-color: #FFFFFF;
-    margin: 0;
+    margin: 20px;
     line-height: 1.6;
 }
 a{
@@ -68,7 +68,7 @@ img{
     justify-content: center;
 }
 .page{
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -76,4 +76,8 @@ img{
     width:100%;
     height:380px;
     border-radius:6px;
+}
+.about-banner img{
+    display: flex;
+    justify-content: center;
 }
