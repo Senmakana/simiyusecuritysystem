@@ -9,7 +9,7 @@ body{
     font-family: 'Roboto', Sans-Serif;
     color: #2E2E2E;
     background-color: #FFFFFF;
-    margin: 20px;
+    margin: 0px;
     line-height: 1.6;
 }
 a{
@@ -68,8 +68,8 @@ img{
     justify-content: center;
 }
 .page{
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: auto;
     padding: 0 20px;
 }
 #map{
